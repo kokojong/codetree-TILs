@@ -18,8 +18,10 @@ for c in range(n):
     for r in range(0, n):
         tmp.append(board[r][c])
     
-    for i in range(0, n-m):
+    # print("tmp")
+    for i in range(0, n-m+1):
+        # print("tmp[i:i+m]", tmp[i:i+m])
         if len(set(tmp[i:i+m])) == 1:
             answer += 1
-            continue
+            break
 print(answer)

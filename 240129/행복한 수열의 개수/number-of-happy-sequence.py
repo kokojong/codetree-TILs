@@ -11,7 +11,7 @@ for r in range(n): # 행에서 먼저 체크
     for c in range(0, n-m+1):
         if len(set(board[r][c:c+m])) == 1:
             answer += 1
-            continue
+            break
 
 for c in range(n):
     tmp = []

@@ -15,7 +15,6 @@ for _ in range(N):
     row = list(map(int, input().split()))
     board.append(row)
 
-
 def BFS(r, c, K): # r, c 에서 K의 크기만큼 bfs
     visited = [[False for _ in range(N)] for _ in range(N)]
     dr = [-1, 0, 1, 0]
@@ -38,7 +37,7 @@ def BFS(r, c, K): # r, c 에서 K의 크기만큼 bfs
             rr = qr + dr[i]
             cc = qc + dc[i]
 
-            if 0<=rr<N and 0<=cc<N and not visited[rr][cc] and qk<K:
+            if 0<=rr<N and 0<=cc<N and (not visited[rr][cc]) and qk<K:
                 queue.append((rr, cc, qk+1))
                 visited[rr][cc] = True
 

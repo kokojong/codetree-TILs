@@ -47,7 +47,7 @@ answer = 0
 
 for r in range(N):
     for c in range(N):
-        for k in range(N//2+1):
+        for k in range(N+1): # 모든걸 감싸도록 하는걸 포함해야함
             result = BFS(r, c, k)
             # print(result, r, c, k)
             if result*M - (2*k*k + 2*k + 1) >= 0:

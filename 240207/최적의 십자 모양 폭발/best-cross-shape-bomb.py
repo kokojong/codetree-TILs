@@ -45,13 +45,10 @@ def checkBoard(board):
             if r+1 < N:
                 if board[r][c] == board[r+1][c]:
                     cnt += 1
-                    continue
             # 오른쪽거랑 비교하기
             if c+1 < N:
                 if board[r][c] == board[r][c+1]:
                     cnt += 1
-                    continue
-    
     return cnt
 
 answer = 0

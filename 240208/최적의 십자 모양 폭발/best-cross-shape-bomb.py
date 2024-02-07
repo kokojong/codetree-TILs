@@ -52,11 +52,17 @@ def checkBoard(newBoard):
                     cnt += 1
     return cnt
 
-answer = 0
+answer = checkBoard(board)
 for r in range(N):
     for c in range(N):
         new = bomb(r, c, copy.deepcopy(board))
         result = checkBoard(new)
-        # print(result)
+        # print(result, r, c, new)
         answer = max(answer, result)
 print(answer)
+
+# 4
+# 1 1 2 1 
+# 1 2 1 1 
+# 1 2 1 2 
+# 1 1 1 2

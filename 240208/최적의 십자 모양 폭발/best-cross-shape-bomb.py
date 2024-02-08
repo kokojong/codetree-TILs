@@ -28,11 +28,15 @@ def bomb(r, c, newBoard):
         if 0<=cc<N:
             newBoard[r][cc] = 0
 
+    # print("터진상태", newBoard)
+
     for i in range(N-1, -1, -1):
         for j in range(N):
             if newBoard[i][j] == 0 and i-1 >= 0:
                 newBoard[i][j] = newBoard[i-1][j]
                 newBoard[i-1][j] = 0
+
+    # print("중력 적용", newBoard)
                 
     return newBoard
 
@@ -52,7 +56,7 @@ def checkBoard(newBoard):
                     cnt += 1
     return cnt
 
-answer = checkBoard(board)
+answer = 0
 for r in range(N):
     for c in range(N):
         new = bomb(r, c, copy.deepcopy(board))
@@ -61,8 +65,18 @@ for r in range(N):
         answer = max(answer, result)
 print(answer)
 
+# new = bomb(2, 2, copy.deepcopy(board))
+# print(new)
+# print(checkBoard(new))
+# for r in range(N):
+#     print(*new[r])
+# print()
+
+
 # 4
 # 1 1 2 1 
 # 1 2 1 1 
 # 1 2 1 2 
 # 1 1 1 2
+
+# 정답 12, 내 답 11 ???

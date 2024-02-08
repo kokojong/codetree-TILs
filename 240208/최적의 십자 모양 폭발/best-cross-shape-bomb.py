@@ -18,23 +18,23 @@ for _ in range(N):
 
 def bomb(r, c, newBoard):
     k = newBoard[r][c]-1
-    newBoard[r][c] = 0
+    newBoard[r][c] = -1
 
     for rr in range(r-k, r+k+1):
         if 0<=rr<N:
-            newBoard[rr][c] = 0
+            newBoard[rr][c] = -1
 
     for cc in range(c-k, c+k+1):
         if 0<=cc<N:
-            newBoard[r][cc] = 0
+            newBoard[r][cc] = -1
 
     # print("터진상태", newBoard)
 
     for i in range(N-1, -1, -1):
         for j in range(N):
-            if newBoard[i][j] == 0 and i-1 >= 0:
+            if newBoard[i][j] == -1 and i-1 >= 0:
                 newBoard[i][j] = newBoard[i-1][j]
-                newBoard[i-1][j] = 0
+                newBoard[i-1][j] = -1
 
     # print("중력 적용", newBoard)
                 
@@ -44,7 +44,7 @@ def checkBoard(newBoard):
     cnt = 0
     for r in range(N):
         for c in range(N):
-            if newBoard[r][c] == 0:
+            if newBoard[r][c] == -1:
                 continue
             # 아래꺼랑 비교하기
             if r+1 < N:

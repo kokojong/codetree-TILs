@@ -62,7 +62,7 @@ def checkBoard(newBoard):
     return cnt
 
 answer = 0
-for r in range(3,N):
+for r in range(N):
     for c in range(N):
         new = bomb(r, c, copy.deepcopy(board))
         result = checkBoard(new)

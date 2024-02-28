@@ -32,6 +32,8 @@ while M:
             if 0 <= rr < N and 0 <= cc < N:
                 posibles.append((board[rr][cc], rr, cc))
         posibles.sort()
+        if not posibles:
+            break
         n, rrr, ccc = posibles[-1]
         # print("posibles", posibles)
 

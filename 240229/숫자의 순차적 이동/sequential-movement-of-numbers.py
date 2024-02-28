@@ -21,7 +21,7 @@ for r in range(N):
 # print(arr)
  # 턴 한번이 16번을 옮기는것...!
 while M:
-    for k in range(1, 17):
+    for k in range(1, N*N+1):
         r, c = arr[k]
 
         posibles = []
@@ -32,8 +32,6 @@ while M:
             if 0 <= rr < N and 0 <= cc < N:
                 posibles.append((board[rr][cc], rr, cc))
         posibles.sort()
-        if not posibles:
-            break
         n, rrr, ccc = posibles[-1]
         # print("posibles", posibles)
 

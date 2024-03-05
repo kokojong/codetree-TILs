@@ -7,7 +7,7 @@ nums = [i for i in range(1, K+1)]
 word = []
 
 def recursive():
-    if len(word) == K:
+    if len(word) == N:
         print(*word)
         return
 

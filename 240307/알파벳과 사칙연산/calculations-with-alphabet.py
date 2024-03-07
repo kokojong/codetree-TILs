@@ -24,7 +24,7 @@ def DFS():
 
 DFS()
 # print("arr", arr)
-answer = 0
+answer = -float('inf')
 
 for alphas in arr:
     dic = dict()
@@ -62,7 +62,7 @@ for alphas in arr:
             result = x*y
         
         queue.appendleft(result)
-    print(queue[0])
+    # print(queue[0])
     answer = max(queue[0], answer)
 
 print(answer)

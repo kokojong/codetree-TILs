@@ -3,6 +3,10 @@ from collections import deque
 
 inputs = list(input())
 
+if len(input) == 1:
+    print(4)
+    exit()
+
 arr = []
 word = []
 

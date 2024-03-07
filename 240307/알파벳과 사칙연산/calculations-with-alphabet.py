@@ -3,7 +3,7 @@ from collections import deque
 
 inputs = list(input())
 
-if len(input) == 1:
+if len(inputs) == 1:
     print(4)
     exit()
 

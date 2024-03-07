@@ -19,7 +19,7 @@ def DFS():
         word.pop()
 
 DFS()
-
+# print("arr", arr)
 answer = 0
 
 for alphas in arr:
@@ -50,9 +50,9 @@ for alphas in arr:
         y = int(queue.popleft())
 
         # print(x, op, y)
-        if op == '+':
+        if op == "+":
             result = x+y
-        elif op == '-':
+        elif op == "-":
             result = x-y
         elif op == "*":
             result = x*y

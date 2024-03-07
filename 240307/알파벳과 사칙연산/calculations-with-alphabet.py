@@ -62,7 +62,7 @@ for alphas in arr:
             result = x*y
         
         queue.appendleft(result)
-    
+    print(queue[0])
     answer = max(queue[0], answer)
 
 print(answer)

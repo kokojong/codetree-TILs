@@ -13,6 +13,14 @@ dp[0][0] = board[0][0]
 
 for i in range(N):
     for j in range(N):
-        dp[i][j] = max(dp[i-1][j] + board[i][j], dp[i][j-1] + board[i][j])
+        if i == 0 and j == 0:
+            continue
+        elif i == 0:
+            dp[i][j] = dp[i][j-1] + board[i][j]
+        elif j == 0:
+            dp[i][j] = dp[i-1][j] + board[i][j]
+        else:
+            dp[i][j] = max(dp[i-1][j] + board[i][j], dp[i][j-1] + board[i][j])
 
+# print(dp)
 print(dp[-1][-1])

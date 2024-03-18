@@ -25,27 +25,7 @@ for r in range(1, N):
         up = dp[r-1][c]
         left = dp[r][c-1]
 
-        # print("r, c, dp", r, c, dp)
-        
-        if board[r][c] > up:
-            dp[r][c] = min(board[r][c], dp[r][c])
-
-        if board[r][c] > left:
-            dp[r][c] = min(board[r][c], dp[r][c])
-        
-        if board[r][c] <= up:
-            dp[r][c] = min(up, dp[r][c])
-        
-        if board[r][c] <= left:
-            dp[r][c] = min(left, up, dp[r][c])
-
-        # if board[r][c] >= max(dp[r][c-1], dp[r-1][c]):
-        #     dp[r][c] = board[r][c]
-        # else:
-        # dp[r][c] = max(dp[r][c-1], dp[r-1][c], board[r][c])
-        #    dp[r][c] = min(dp[r][c-1], dp[r-1][c]) # 가장 작은 수로 경로 최신화
-
-        # print("결과", dp)
+        dp[r][c] = max(min(up, left), board[r][c])
 
 # print(dp)
 print(dp[-1][-1])

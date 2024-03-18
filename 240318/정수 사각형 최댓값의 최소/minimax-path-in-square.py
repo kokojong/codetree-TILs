@@ -28,4 +28,4 @@ for r in range(1, N):
             dp[r][c] = min(dp[r][c-1], dp[r-1][c])
 
 # print(dp)
-print(dp[-1])
+print(dp[-1][-1])

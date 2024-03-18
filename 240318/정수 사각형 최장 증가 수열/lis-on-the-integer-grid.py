@@ -8,7 +8,7 @@ for _ in range(N):
 dp = [[1 for _ in range(N)] for _ in range(N)] # 이 지점부터 이동이 가능한 최대 거리
 
 dr = [-1, 0, 1 ,0]
-dc = [0, -1, 0, -1]
+dc = [0, 1, 0, -1]
 
 cells = []
 for r in range(N):
@@ -16,6 +16,8 @@ for r in range(N):
         cells.append((board[r][c], r, c))
 
 cells.sort()
+
+# print(cells)
 
 for k, r, c in cells:
     for i in range(4):

@@ -27,11 +27,14 @@ for r in range(1, N):
 
         # print("r, c, dp", r, c, dp)
         
-        if board[r][c] > up and board[r][c] > left:
-            dp[r][c] = board[r][c]
+        if board[r][c] > up:
+            dp[r][c] = min(board[r][c], dp[r][c])
+
+        if board[r][c] > left:
+            dp[r][c] = min(board[r][c], dp[r][c])
         
         if board[r][c] <= up:
-            dp[r][c] = min(left, up, dp[r][c])
+            dp[r][c] = min(up, dp[r][c])
         
         if board[r][c] <= left:
             dp[r][c] = min(left, up, dp[r][c])

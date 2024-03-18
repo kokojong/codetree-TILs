@@ -18,6 +18,7 @@ for c in range(1, N):
 for r in range(1, N):
     dp[r][0] = max(dp[r-1][0], board[r][0])
 
+# print(dp)
 
 for r in range(1, N):
     for c in range(1, N):
@@ -25,7 +26,7 @@ for r in range(1, N):
             dp[r][c] = board[r][c]
         else:
         # dp[r][c] = max(dp[r][c-1], dp[r-1][c], board[r][c])
-            dp[r][c] = min(dp[r][c-1], dp[r-1][c])
+            dp[r][c] = min(dp[r][c-1], dp[r-1][c]) # 가장 작은 수로 경로 최신화
 
 # print(dp)
 print(dp[-1][-1])

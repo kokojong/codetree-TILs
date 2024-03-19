@@ -12,7 +12,7 @@ dp[0] = 0
 
 for i in range(N):
     for j in range(i):
-        if dp[j] == 0:
+        if dp[j] == -1:
             continue
 
         if j + arr[j] >= i:

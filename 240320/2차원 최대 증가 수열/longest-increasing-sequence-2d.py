@@ -10,14 +10,12 @@ for _ in range(R):
 # 점프시 오른쪽 + 아래쪽에 있는 위치로만 점프가 가능
 
 dp = [[0 for _ in range(C)] for _ in range(R)]
-
-dp[0][0] = 1
 # 0,0 부터 일단 시작해두기
 
 for r in range(1, R):
     for c in range(1, C):
         if board[r][c] > board[0][0]:
-            dp[r][c] = dp[0][0] + 1
+            dp[r][c] = 1
 
 # print(dp)
 
@@ -33,4 +31,4 @@ for r in range(1, R):
 answer = 0
 for d in dp:
     answer = max(max(d), answer)
-print(answer)
+print(answer+1)

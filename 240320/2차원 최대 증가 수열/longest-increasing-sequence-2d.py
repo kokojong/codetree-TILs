@@ -24,7 +24,7 @@ for r in range(1, R):
         # 시작점
         for rr in range(r+1, R):
             for cc in range(c+1, C):
-                if board[rr][cc] > board[r][c]:
+                if board[rr][cc] > board[r][c] and dp[r][c] > 0:
                     dp[rr][cc] = max(dp[r][c] + 1, dp[rr][cc])
 
 # print(dp)

@@ -14,10 +14,10 @@ for i in range(1, N):
     s,e,p = map(int, arr[i])
 
     for j in range(i):
-        if arr[j][1] > e:
-            dp[i] = dp[j] + p # 안겹침
+        if arr[j][1] >= s:
+            dp[i] = max(p, dp[i]) # 안겹침
         else:
-            dp[i] = max(p, dp[i])
+            dp[i] = max(dp[j] + arr[i][2], dp[i])
 
 # print(dp)
 print(max(dp))

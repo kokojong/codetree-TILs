@@ -6,12 +6,18 @@ arr = []
 for _ in range(N):
     s, e, p = map(int, input().split())
     arr.append((s, e, p))
-    M = max(e, M)
 
-dp = [0 for _ in range(M+1)]
+dp = [0 for _ in range(N)]
+dp[0] = arr[0][2] # p
 
-for s,e,p in arr:
-    for i in range(e, M+1):
-        dp[i] = max(dp[s-1] + p, dp[i])
+for i in range(1, N):
+    s,e,p = map(int, arr[i])
 
-print(dp[-1])
+    for j in range(i):
+        if j > e:
+            dp[i] = max(dp[j] + p, dp[i])
+        else:
+            dp[i] = max(p, dp[i])
+
+print(max(dp))
+# print(dp[-1])

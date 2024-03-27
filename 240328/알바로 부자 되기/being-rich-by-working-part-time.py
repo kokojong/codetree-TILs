@@ -15,9 +15,10 @@ for i in range(1, N):
 
     for j in range(i):
         if j > e:
-            dp[i] = max(dp[j] + p, dp[i])
+            dp[i] = dp[j] + p # 안겹침
         else:
             dp[i] = max(p, dp[i])
 
+# print(dp)
 print(max(dp))
 # print(dp[-1])

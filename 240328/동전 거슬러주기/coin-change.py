@@ -18,4 +18,7 @@ for i in range(1, N):
             dp[j] = min(dp[j-K] + 1, dp[j]) # K를 사용하지 않았을 때의 조건 + 1(사용)
 
     # print(dp)
-print(dp[-1])
+if dp[-1] == INF:
+    print(-1)
+else:
+    print(dp[-1])

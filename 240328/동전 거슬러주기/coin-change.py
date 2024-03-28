@@ -3,7 +3,8 @@ N, M = map(int, input().split())
 arr = list(map(int, input().split()))
 
 INF = float('inf')
-dp = [0 for _ in range(M+1)] # 초기화
+dp = [INF for _ in range(M+1)] # 초기화
+dp[0] = 0
 for i in range(1, M+1):
     if i%arr[0] == 0:
         dp[i] = i//arr[0]

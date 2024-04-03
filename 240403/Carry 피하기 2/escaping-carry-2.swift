@@ -48,4 +48,4 @@ for i in 0..<N {
 }
 
 answer.sort()
-print(answer.last!)
+print(answer.last ?? -1)

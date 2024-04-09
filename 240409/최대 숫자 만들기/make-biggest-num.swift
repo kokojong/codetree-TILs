@@ -14,10 +14,17 @@ for _ in 0..<N {
 }
 
 arr.sort {
-    let s1 = Array(String($0)).map { Int(String($0))! }
-    let s2 = Array(String($1)).map { Int(String($0))! }
+    var s1 = Array(String($0)).map { Int(String($0))! }
+    var s2 = Array(String($1)).map { Int(String($0))! }
     let l1 = min(s1.count, s2.count)
-    for i in 0..<l1{
+    let l2 = max(s1.count, s2.count)
+
+    s1 = s1 + Array(repeating: s1.last!, count: l2-s1.count)
+    s2 = s2 + Array(repeating: s2.last!, count: l2-s2.count)
+
+    // print("s1, s2", s1, s2)
+
+    for i in 0..<l2{ // 모든걸 비교해보기
         if s1[i] == s2[i] {
             continue
         } else {
@@ -25,14 +32,9 @@ arr.sort {
         }
     }
     // 만약 여기까지 왔는데도 안끝난거면 겹치는 부분까지는 똑같음
-    // print("s1, s2", s1, s2)
-    if s1.count > s2.count {
-        return s1[l1] > s2[l1-1] // 둘이 비교해서 더 큰거로 리턴
-    } else if s1.count < s2.count {
-        return s1[l1-1] > s2[l1]
-    } else {
-        return true
-    }
+    
+    return true
 }
 
+// print(arr)
 print(arr.map{ String($0) }.joined(separator: ""))

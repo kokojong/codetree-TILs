@@ -1,15 +1,8 @@
 # 두개씩 짝지어주기. 두 자연수의 합이 가장 큰 두 자연수의 합을 C 일때 이거의 최솟값
 # 평탄화를 해줘야함.
 
-import heapq
-
 N = int(input()) # M개의 자연수 중에서 서로 다른 값들의 갯수(Input 수)
 M = 0
-
-heap = []
-
-# minV = float('inf')
-# maxV = 0
 
 arr = []
 for _ in range(N):

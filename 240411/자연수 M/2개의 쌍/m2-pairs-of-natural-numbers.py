@@ -15,11 +15,29 @@ arr = []
 for _ in range(N):
     x, y = map(int, input().split()) # y가 x개 있다
     M += x
-    arr.append(y)
+    arr.append([y, x])
 
 arr.sort()
-print(arr[0] + arr[-1])
-    
 
-# 1 2 9 100 -> 뭘해도 C가 101 -> 맨 앞이랑 맨뒤
-# 1 1 9 10 -> 뭘해도 11 -> 맨 앞이랑 뒤
+i = 0
+j = N-1
+
+answer = 0
+
+while i < j:
+    count = min(arr[i][1], arr[j][1]) # 이만큼 빼줄거임
+    answer = max(arr[i][0] + arr[j][0], answer)
+    arr[i][1] -= count
+    if arr[i][1] == 0:
+        i += 1
+    
+    arr[j][1] -= count
+    if arr[j][1] == 0:
+        j -= 1
+
+# print("i, j", i, j, arr)
+
+if i == j:
+    answer = max(arr[i][0]*2, answer)
+
+print(answer)

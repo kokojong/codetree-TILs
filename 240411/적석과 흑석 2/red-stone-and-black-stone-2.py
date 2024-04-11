@@ -16,7 +16,7 @@ for _ in range(N):
     black.append(list(map(int, input().split()))) # A ~ B
 
 red.sort()
-black.sort(key = lambda x: (x[0], x[1]-x[0]))
+black.sort(key = lambda x: (x[1], x[1]-x[0]))
 
 # print(red)
 # print(black)
@@ -26,14 +26,17 @@ j = 0
 answer = 0
 
 while i < C and j < N:
-    if black[j][0] <= red[i] <= black[j][1]:
+    T = red[i]
+    A, B = black[j]
+
+    if A <= T <= B:
         i += 1
         j += 1
         answer += 1
         continue
     
-    if black[j][1] < red[i]: # 구간보다 이미 넘어온거라면
-        j += 1
+    if B < T: # 구간보다 이미 크다면
+        j += 1 # 다음 구간으로 넘기기
         continue
     
     i += 1

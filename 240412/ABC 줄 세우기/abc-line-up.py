@@ -16,5 +16,6 @@ for i in range(N):
         arr[j] = arr[j+1]
         arr[j+1] = tmp
         answer += 1
+        j += 1
 
 print(answer)

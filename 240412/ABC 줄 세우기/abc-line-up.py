@@ -9,13 +9,14 @@ target = sorted(arr)
 answer = 0
 
 for i in range(N):
-    j = i
-    # print(arr[i], target[i])
-    while arr[i] != target[i] and j < N-1:
-        tmp = arr[j]
-        arr[j] = arr[j+1]
-        arr[j+1] = tmp
+    if arr[i] == target[i]:
+        continue
+
+    for j in range(i, N-1):
+        arr[j], arr[j+1] = arr[j+1], arr[j]
         answer += 1
-        j += 1
+
+        if arr[i] == target[i]:
+            break
 
 print(answer)

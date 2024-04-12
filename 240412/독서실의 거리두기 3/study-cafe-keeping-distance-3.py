@@ -10,7 +10,9 @@ for i in range(1, N):
         last = i
 
 # print(dis)
-print((max(dis)) // 2)
+# print((max(dis)) // 2)
+dis.append(max(dis) // 2)
+print(min(dis))
 
 # 17
 # 10001001000100001

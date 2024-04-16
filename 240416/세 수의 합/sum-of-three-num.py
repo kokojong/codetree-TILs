@@ -35,6 +35,7 @@ for a in arr:
 
 # print(dic)
 answer = 0
+three = False
 for i in range(N):
     for j in range(i+1, N):
         a = arr[i]
@@ -44,7 +45,8 @@ for i in range(N):
         
         result = 0
         if c == a and c == b: # 세개 다 같은거
-            result = dic[c] * (dic[c]-1) * (dic[c] - 2) # 그중에서 3개 고르기 - 0 될수도 있음
+            # result = dic[c] * (dic[c]-1) * (dic[c] - 2) # 그중에서 3개 고르기 - 0 될수도 있음
+            three = True
         elif c == a and dic[c] > 1:
             result = dic[c]-1
         elif c == b:
@@ -54,4 +56,9 @@ for i in range(N):
         # print("a, b, c", a, b, c, result)
         answer += result
 
-print(answer//3)
+answer = answer//3
+if three:
+    # print("k//3", K//3, dic[K//3])
+    answer += (dic[K//3] * (dic[K//3]-1) * (dic[K//3]-2))//6
+
+print(answer)

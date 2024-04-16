@@ -13,8 +13,11 @@ for a in arr:
 answer = 0
 for k in set(arr):
     v = dic[k]
-    # print(k, v)
-    result = v * dic[K-k]
+    k2 = K-k
+    if k == k2:
+        result = v*(v-1)
+    else:
+        result = v * dic[k2]
     answer += result
 
 print(answer//2)

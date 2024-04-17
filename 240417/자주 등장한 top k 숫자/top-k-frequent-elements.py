@@ -15,7 +15,7 @@ for (k, v) in dic.items():
 s.sort(key = lambda x: (-x[0], -x[1]))
 
 answer = []
-for i in range(k):
+for i in range(K):
     answer.append(s[i][1])
 
 print(*answer)
